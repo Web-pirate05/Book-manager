@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Library.css">
+    <script src="Library.js" defer></script>
+</head>
+<body>
+    <button id="addBook">Add book</button>
+
+    <dialog id="dialog">
+        <form>
+            <label for="Title">Title: </label>
+            <input id="Title" type="text" required>
+            <label for="Author">Author: </label>
+            <input id="Author" type="text" required>
+            <label for="Pages">Pages: </label>
+            <input id="Pages" type="number" required>
+            <label for="Read">Read ?</label>
+            <input id="Read" type="checkbox">
+            
+            <button type="submit">submit</button>
+        </form>
+    </dialog>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Pages</th>
+                <th>Read</th>
+            </tr>
+        </thead>
+
+        <tbody id="library-body">
+
+        </tbody>
+    </table>
+</body>
+</html>
