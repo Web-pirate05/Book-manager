@@ -46,7 +46,7 @@ function displayBooks() {
                 <td>${book.title}</td>
                 <td>${book.author}</td>
                 <td>${book.pages}</td>
-                <td>${book.read}</td>
+                <td><button data-id="${book.id}">toogle</button></td>
             </tr>`;
         }
 
@@ -56,11 +56,24 @@ function displayBooks() {
                 <td>${book.title}</td>
                 <td>${book.author}</td>
                 <td>${book.pages}</td>
-                <td>${book.read}</td>
+                <td><button data-id="${book.id}">toogle</button></td>
             </tr>`;
         }
     });
 }
+
+
+const table = document.querySelector("tbody");
+
+table.addEventListener("click", (e) => {
+    if(e.target.tagName !== "BUTTON") return;
+    const book = myLibrary.find(
+        book => book.id === e.target.dataset.id
+    );
+    book.read = !book.read;
+    displayBooks();
+})
+
 
 function addBookToLibrary(title, author, pages, read) {
     const book = new Book(title,author,pages,read);
